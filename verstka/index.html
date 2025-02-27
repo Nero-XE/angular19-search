@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Поиск</title>
+    <style>
+        :root {
+            --accent-color-light: #FCA41225;
+            --accent-color: #fca412;
+            --accent-color-dark: #b1730f;
+
+            --backgroud-color: #ffffff;
+            --backgroud-color-dark: #f5f5f5;
+
+            --text-color-main: #14223D;
+            --text-color-second: #00000025;
+
+            --stroke-color: #0000000d;
+
+            --shadow: 0 0 2vh #00000050;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 2vh;
+
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--backgroud-color-dark);
+        }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding: 2vh;
+            gap: 2vh;
+        }
+
+        .section-search {
+            width: 50vw;
+
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            gap: 1vh;
+        }
+
+        .section-search-header {
+            color: var(--text-color-main);
+            font-size: 4vh;
+        }
+
+        .section-search-form {
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+
+            padding: 2vh;
+            gap: 1vh;
+            border-radius: 2vh;
+            background-color: var(--backgroud-color);
+        }
+
+        .section-search-inp {
+            appearance: none;
+
+            width: 100%;
+
+            border-radius: 1vh;
+            border: 0;
+            padding: 1vh 1.5vh;
+            background-color: var(--backgroud-color);
+
+            border: 0.2vh inset var(--stroke-color);
+            outline: 0 solid var(--accent-color-light);
+
+            transition: outline .25s ease-in-out;
+        }
+
+        .section-search-inp::placeholder {
+            color: var(--text-color-second);
+        }
+
+        .section-search-inp:focus {
+            outline: 0.5vh solid var(--accent-color-light);
+        }
+
+        .section-search-clear {
+            border-radius: 1vh;
+            border: 0;
+            padding: 1vh 2.5vh;
+
+            cursor: pointer;
+            background-color: var(--backgroud-color);
+            outline: 0.25vh solid var(--stroke-color);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+
+            transition: box-shadow .25s ease-in-out;
+        }
+
+        .section-search-clear:hover {
+            box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-search-clear img {
+            width: 1.5vh;
+        }
+
+        .section-search-result {
+            width: 50vw;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+
+            padding: 2vh;
+            gap: 2vh;
+            border-radius: 2vh;
+            background-color: var(--backgroud-color);
+        }
+
+        .section-search-result-header {
+            color: var(--text-color-main);
+            font-size: 3vh;
+        }
+
+        .section-search-result-overflow {
+            width: 100%;
+            height: 69vh;
+
+            display: flex;
+            flex-direction: column;
+
+            padding: 1vh;
+            gap: 1vh;
+            border-radius: 2vh;
+            background-color: var(--backgroud-color-dark);
+            overflow-y: scroll;
+        }
+
+        .section-search-result-overflow::-webkit-scrollbar {
+            width: 0.5vw;
+            border-radius: 1vh;
+            background-color: var(--stroke-color);
+        }
+
+        .section-search-result-overflow::-webkit-scrollbar-thumb {
+            background-color: var(--stroke-color);
+        }
+
+        .section-search-result-overflow::-webkit-scrollbar-thumb {
+            border-radius: 1vh;
+            background-color: var(--accent-color);
+        }
+
+        .section-search-result-item {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+
+            padding: 2vh;
+            gap: 1vh;
+            border-radius: 1vh;
+            background-color: var(--backgroud-color);
+
+            outline: 0.2vh solid var(--stroke-color);
+        }
+
+        .section-search-result-item-header {
+            color: var(--text-color-main);
+        }
+
+        .section-search-result-item-description {
+            color: var(--text-color-second)
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="section-search">
+            <h1 class="section-search-header">Поисковая строка</h1>
+            <form class="section-search-form">
+                <input type="search" name="search_field" id="search_field" class="section-search-inp" placeholder="Поиск записей...">
+            </form>
+        </section>
+        <section class="section-search-result">
+            <h3 class="section-search-result-header">Результаты поиска</h3>
+            <div class="section-search-result-overflow">
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+                <div class="section-search-result-item" id="result_item_1">
+                    <h3 class="section-search-result-item-header">Результат поиска 1</h3>
+                    <p class="section-search-result-item-description">Здесь будет описание первого результата поиска</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

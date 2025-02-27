@@ -1,0 +1,7 @@
+<section class="section-search">
+    <h1 class="section-search-header">Поисковая строка</h1>
+    <form class="section-search-form">
+        <input type="search" name="search_field" id="search_field" class="section-search-inp" placeholder="Поиск записей..." [(ngModel)]="searchInput"  (ngModelChange)="onSearchChange()">
+    </form>
+    {{ searchInput() }}
+</section>
