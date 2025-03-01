@@ -1,17 +1,17 @@
-import { Component, Output, signal, EventEmitter } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-input',
   imports: [FormsModule],
   templateUrl: './search-input.component.html',
-  styles: ``
+  styles: ``,
 })
 export class SearchInputComponent {
-  public searchInput = signal("")
+  public searchInput = signal<string>('');
 
-  @Output() searchChange: EventEmitter<string> = new EventEmitter()
-  
+  public searchChange = output<string>();
+
   onSearchChange() {
     this.searchChange.emit(this.searchInput());
   }

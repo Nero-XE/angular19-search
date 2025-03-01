@@ -1,4 +1,30 @@
 <main>
-    <app-search-input (searchChange)="onSearchChange($event)"></app-search-input>
-    <app-search-results [data]="filteredData"></app-search-results>
+  <app-search-input (searchChange)="onSearchChange($event)" />
+  <app-search-results [data]="filteredData"></app-search-results>
+  <div class="wave-wrapper wave-animation">
+    <div class="wave-wrapper-inner bg-top">
+      <div
+        class="wave wave-top"
+        style="
+          background-image: url(&quot;http://front-end-noobs.com/jecko/img/wave-top.png&quot;);
+        "
+      ></div>
+    </div>
+    <div class="wave-wrapper-inner bg-middle">
+      <div
+        class="wave wave-middle"
+        style="
+          background-image: url(&quot;http://front-end-noobs.com/jecko/img/wave-mid.png&quot;);
+        "
+      ></div>
+    </div>
+    <div class="wave-wrapper-inner bg-bottom">
+      <div
+        class="wave wave-bottom"
+        style="
+          background-image: url(&quot;http://front-end-noobs.com/jecko/img/wave-bot.png&quot;);
+        "
+      ></div>
+    </div>
+  </div>
 </main>
