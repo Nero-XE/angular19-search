@@ -7,7 +7,7 @@ import { IData } from './app.interfaces';
   selector: 'app-root',
   imports: [SearchInputComponent, SearchResultsComponent],
   templateUrl: './app.component.html',
-  styles: ``,
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   // Набор данных

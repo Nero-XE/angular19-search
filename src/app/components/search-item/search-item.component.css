@@ -16,8 +16,10 @@
 
 .section-search-result-item-header {
     color: var(--text-color-main);
+    font-family: "Roboto Bold";
 }
 
 .section-search-result-item-description {
     color: var(--text-color-second);
+    font-family: "Roboto Medium";
 }

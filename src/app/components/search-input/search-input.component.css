@@ -11,6 +11,7 @@
 .section-search-header {
     color: var(--accent-color);
     font-size: 4vh;
+    font-family: "Roboto Bold";
 }
 
 .section-search-form {

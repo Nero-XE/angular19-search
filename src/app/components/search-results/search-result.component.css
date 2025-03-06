@@ -17,6 +17,7 @@
 .section-search-result-header {
     color: var(--text-color-main);
     font-size: 3vh;
+    font-family: "Roboto Bold";
 }
 
 .section-search-result-overflow {
@@ -28,7 +29,7 @@
 
     padding: 1vh;
     gap: 1vh;
-    border-radius: 2vh 0vh 0 2vh;
+    border-radius: 1vh 0.5vh 0.5vh 1vh;
     background-color: var(--backgroud-color-dark);
     overflow-y: scroll;
 }
