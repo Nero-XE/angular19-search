@@ -5,7 +5,7 @@ import { IData } from '../../app.interfaces';
   selector: 'app-search-item',
   imports: [],
   templateUrl: './search-item.component.html',
-  styles: ``,
+  styleUrl: './search-item.component.css'
 })
 export class SearchItemComponent {
   public item = input<IData>();

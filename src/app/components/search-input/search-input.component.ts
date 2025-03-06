@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-search-input',
   imports: [FormsModule],
   templateUrl: './search-input.component.html',
-  styles: ``,
+  styleUrl: './search-input.component.css'
 })
 export class SearchInputComponent {
   public searchInput = signal<string>('');

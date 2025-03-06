@@ -1,0 +1,23 @@
+.section-search-result-item {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
+    padding: 2vh;
+    gap: 1vh;
+    border-radius: 1vh;
+    background-color: var(--backgroud-color);
+
+    outline: 0.2vh solid var(--stroke-color);
+}
+
+.section-search-result-item-header {
+    color: var(--text-color-main);
+}
+
+.section-search-result-item-description {
+    color: var(--text-color-second);
+}
