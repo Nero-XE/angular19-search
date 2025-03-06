@@ -1,6 +1,6 @@
 <main>
   <app-search-input (searchChange)="onSearchChange($event)" />
-  <app-search-results [data]="filteredData"></app-search-results>
+  <app-search-results [data]="filteredData()"></app-search-results>
   <div class="wave-wrapper wave-animation">
     <div class="wave-wrapper-inner bg-top">
       <div

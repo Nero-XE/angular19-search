@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { IData } from './app.interfaces';
@@ -90,18 +90,19 @@ export class AppComponent {
     },
   ];
 
+  // Поисковой запрос
   public searchQuery = signal<string>('');
 
-  get filteredData() {
-    return this.data.filter(
-      (item) =>
-        item.header.toLowerCase().includes(this.searchQuery().toLowerCase()) ||
-        item.description
-          .toLowerCase()
-          .includes(this.searchQuery().toLowerCase()),
-    );
-  }
+  // Вычесляемый сигнал для фильтрации
+  filteredData = computed(() => {
+    const query = this.searchQuery().toLowerCase()
 
+    return this.data.filter( item => 
+      item.header.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+    )
+  })
+
+  // Обновление значения запроса
   onSearchChange(term: string) {
     this.searchQuery.set(term);
   }
