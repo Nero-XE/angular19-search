@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular12-search": {
+    "angular19-search": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular12-search",
+            "outputPath": "dist/angular19-search",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -22,6 +22,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/**/*",
+                "input": "public/fonts"
               }
             ],
             "styles": ["src/styles.css"],
@@ -55,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular12-search:build:production"
+              "buildTarget": "angular19-search:build:production"
             },
             "development": {
-              "buildTarget": "angular12-search:build:development"
+              "buildTarget": "angular19-search:build:development"
             }
           },
           "defaultConfiguration": "development"
