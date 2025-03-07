@@ -1,4 +1,6 @@
 export interface IData {
-  header: string;
-  description: string;
+  id: number
+  header: string
+  description: string
+  mainText: string
 }
