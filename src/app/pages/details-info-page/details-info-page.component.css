@@ -1,0 +1,112 @@
+.details-info-result {
+    width: 50vw;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
+    padding: 2vh;
+    gap: 2vh;
+    border-radius: 2vh;
+    background-color: var(--backgroud-color);
+    box-shadow: var(--shadow);
+}
+
+.details-info-result-header {
+    color: var(--text-color-main);
+    font-size: 3vh;
+    font-family: "Roboto Bold";
+}
+
+.details-info-text-overflow {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1vh;
+    gap: 1vh;
+    border-radius: 1vh 0.5vh 0.5vh 1vh;
+    background-color: var(--backgroud-color-dark);
+
+    overflow-y: auto;
+}
+
+.details-info-text-overflow::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.details-info-text-overflow::-webkit-scrollbar-track {
+    border-radius: 1vh;
+    background-color: var(--stroke-color);
+}
+
+.details-info-text-overflow::-webkit-scrollbar-thumb {
+    border-radius: 1vh;
+    background-color: var(--accent-color);
+}
+
+.details-info-text {
+    font-family: "Roboto Medium";
+    line-height: 1.5rem;
+    color: var(--text-color-main);
+}
+
+.details-info-nav {
+    width: 50vw;
+    padding: 2vh;
+}
+
+.details-info-nav-link {
+    font-family: "Roboto Medium";
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.details-info-nav-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 748px) {
+    .details-info-result {
+        width: 90vw;
+        padding: 1.5vh;
+    }
+
+    .details-info-text-overflow {
+        border-radius: 1vh;
+    }
+
+    .details-info-text-overflow::-webkit-scrollbar {
+        width: 1vw;
+    }
+
+    .details-info-result-header {
+        margin-top: 1vh;
+    }
+
+    .details-info-nav {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 1280px) {
+    .details-info-result {
+        width: 90vw;
+    }
+
+    .details-info-text-overflow {
+        border-radius: 1.5vh;
+    }
+
+    .details-info-text-overflow::-webkit-scrollbar {
+        width: 1vw;
+    }
+
+    .details-info-nav {
+        width: 90vw;
+    }
+}

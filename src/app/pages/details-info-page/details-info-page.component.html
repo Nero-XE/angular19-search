@@ -1,0 +1,13 @@
+<main>
+    <section class="details-info-nav">
+        <a class="details-info-nav-link" (click)="backToMain()" >Назад</a>
+    </section>
+    <section class="details-info-result">
+        @if (record) {
+            <h3 class="details-info-result-header">{{ record.header }}</h3>
+            <div class="details-info-text-overflow">
+                <p class="details-info-text">{{ record.mainText }}</p>
+            </div>
+        }
+    </section>
+</main>

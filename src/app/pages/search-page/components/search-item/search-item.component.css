@@ -17,6 +17,12 @@
 .section-search-result-item-header {
     color: var(--text-color-main);
     font-family: "Roboto Bold";
+    cursor: pointer;
+    transition: color ease-in-out .2s;
+}
+
+.section-search-result-item-header:hover {
+    color: var(--accent-color);
 }
 
 .section-search-result-item-description {
