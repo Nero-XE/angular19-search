@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { IData } from '../../app.interfaces';
+import { IData } from '../../../../shared/shared.interfaces';
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, signal, computed } from '@angular/core';
-import { SearchInputComponent } from '../../components/search-input/search-input.component';
-import { SearchResultsComponent } from '../../components/search-results/search-results.component';
-import { IData } from '../../app.interfaces';
-import dataJson from '../../app.data.json';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { IData } from '../../shared/shared.interfaces';
+import dataJson from '../../shared/shared.data.json';
 
 @Component({
   selector: 'app-search-page',

@@ -88,15 +88,3 @@
 .wave-animation .wave-bottom {
     animation: move_wave 15s linear infinite;
 }
-
-.section-search-header,
-.section-search-result-item-header,
-.section-search-result-header {
-    font-family: "Roboto Bold";
-}
-
-.section-search-form,
-.section-search-result-item-description,
-.section-search-result-overflow {
-    font-family: "Roboto Medium";
-}

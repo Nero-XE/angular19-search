@@ -4,16 +4,16 @@ import { DetailsInfoPageComponent } from './pages/details-info-page/details-info
 
 export const routes: Routes = [
     {
-        path: '*',
-        redirectTo: 'main',
-        pathMatch: 'full'
-    },
-    {
         path: 'main',
         component: SearchPageComponent
     },
     {
         path: 'details/:id',
         component: DetailsInfoPageComponent
-    }
+    },
+    {
+        path: '**',
+        redirectTo: 'main',
+        pathMatch: 'full'
+    },
 ];

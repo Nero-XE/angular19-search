@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IData } from '../../shared/shared.interfaces';
-import dataJson from '../../shared/shared.data.json';
+import { IData } from '../../../shared/shared.interfaces';
+import dataJson from '../../../shared/shared.data.json'
 
 @Component({
   selector: 'app-details-info-page',
   imports: [],
-  templateUrl: './details-info-page.component.html',
+  templateUrl: 'details-info-page.component.html',
   styleUrl: './details-info-page.component.css'
 })
 export class DetailsInfoPageComponent {
